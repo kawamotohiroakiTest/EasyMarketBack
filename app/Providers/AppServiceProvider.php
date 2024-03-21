@@ -23,10 +23,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind(AuthServiceInterface::class, AuthService::class);
-        $this->app->bind(ImageServiceInterface::class, ImageService::class);
-        $this->app->bind(UserServiceInterface::class, UserService::class);
-
         // Cashier::ignoreMigrations();
     }
 

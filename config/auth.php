@@ -15,6 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
+        'guard' => 'easymarket_api',
         'passwords' => 'users',
     ],
 
@@ -40,6 +41,14 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'easymarket_api' => [
+            'driver' => 'sanctum',
+            'provider' => 'users',
+        ],
+        'admin_api' => [
+            'driver' => 'sanctum',
+            'provider' => 'admin_users',
+        ],
     ],
 
     /*
@@ -63,6 +72,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+        'admin_users' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\AdminUser::class,
         ],
 
         // 'users' => [

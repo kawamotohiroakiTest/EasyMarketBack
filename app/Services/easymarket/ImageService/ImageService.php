@@ -34,7 +34,9 @@ class ImageService implements ImageServiceInterface
     public function saveUploadFile(UploadedFile $file): Image
     {
         // ファイルをストレージに保存し、そのパスを取得
-        $path = $file->store('images', 'public');
+        $disk = env('APP_ENV') === 'production' ? 's3' : 'public';
+
+        $path = $file->store('images', $disk);
 
         $imagePath = $file->getRealPath();
         list($width, $height) = getimagesize($imagePath);

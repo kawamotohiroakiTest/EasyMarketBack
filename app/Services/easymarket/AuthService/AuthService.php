@@ -4,7 +4,7 @@ namespace App\Services\easymarket\AuthService;
 
 use App\Models\User;
 use App\Notifications\easymarket\SignupVerify;
-use App\Services\easymarket\Dtos\OperationResult;
+use App\Services\easymarket\AuthService\Dtos\OperationResult;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Hash;

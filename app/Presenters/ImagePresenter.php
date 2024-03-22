@@ -10,6 +10,9 @@ class ImagePresenter extends Presenter
 {
     public function url(): string
     {
-        return asset(Storage::url($this->file_path));
+
+        $disk = env('APP_ENV') === 'production' ? 's3' : 'public';
+
+        return Storage::disk($disk)->url($this->file_path);
     }
 }

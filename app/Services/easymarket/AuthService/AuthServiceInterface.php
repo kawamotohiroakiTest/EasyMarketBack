@@ -2,7 +2,7 @@
 
 namespace App\Services\easymarket\AuthService;
 
-use App\Services\easymarket\Dtos\OperationResult;
+use App\Services\easymarket\AuthService\Dtos\OperationResult;
 use App\Services\easymarket\AuthService\Dtos\AccessToken;
 
 interface AuthServiceInterface

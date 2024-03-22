@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\easymarket\Dtos;
+namespace App\Services\easymarket\AuthService\Dtos;
 
 class OperationResult
 {

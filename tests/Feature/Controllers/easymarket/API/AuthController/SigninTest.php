@@ -91,7 +91,7 @@ class SigninTest extends TestCase
     {
         $user = User::factory()->create([
             'email' => 'test@example.com',
-            'password' => bcrypt('test-password'),
+            'password' => Hash::make('test-password'),
         ]);
 
         // メールアドレスが誤っている

@@ -28,7 +28,26 @@ class ServiceeasymarketServiceProvider extends ServiceProvider
         $this->app->bind(
             \App\Services\easymarket\ProductService\ProductServiceInterface::class,
             \App\Services\easymarket\ProductService\ProductService::class
-        );    
+        );
+        $this->app->bind(
+            \App\Services\easymarket\DealService\DealServiceInterface::class,
+            \App\Services\easymarket\DealService\DealService::class
+        );
+        $this->app->bind(
+            \App\Services\easymarket\StripeService\StripeServiceInterface::class,
+            \App\Services\easymarket\StripeService\StripeServiceMock::class
+        );
+        // if (app()->environment('testing') || empty(config('services.stripe.secret'))) {
+        //     $this->app->bind(
+        //         \App\Services\easymarket\StripeService\StripeServiceInterface::class,
+        //         \App\Services\easymarket\StripeService\StripeServiceMock::class
+        //     );
+        // } else {
+        //     $this->app->bind(
+        //         \App\Services\easymarket\StripeService\StripeServiceInterface::class,
+        //         \App\Services\easymarket\StripeService\StripeService::class
+        //     );
+        // }    
     }
 
     /**
